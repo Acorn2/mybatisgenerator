@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
@@ -39,8 +38,6 @@ public class FreemarkerService {
      * @throws Exception
      */
     public void write(String templateName, Map<String, Object> dataModel, String filePath, GenerateParameter generateParameter) throws Exception {
-        // FTL(freemarker templete language)模板所在的文件夹
-//        configuration.setClassLoaderForTemplateLoading(ClassLoader.getClassLoader(FreemarkerService.class), "/templates/mybatis");
         // FTL(freemarker templete language)模板的文件名称
         Template template = configuration.getTemplate(dataModel.get("type") + File.separator + templateName + ".ftl");
         File file;
@@ -60,5 +57,4 @@ public class FreemarkerService {
         fileOutputStream.flush();
         fileOutputStream.close();
     }
-
 }

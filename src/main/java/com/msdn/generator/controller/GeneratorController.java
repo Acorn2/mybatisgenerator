@@ -30,17 +30,18 @@ public class GeneratorController {
     /*
         // 请求参数
         {
-            "database": "db_fl_sale",
+            "database": "db_tl_sale",
             "flat": true,
-            "group": "business",
-            "host": "47.103.92.197",
+            "type": "mybatis",
+            "group": "base",
+            "host": "127.0.0.1",
             "module": "sale",
-            "password": "ZhdJk2020@pwd",
+            "password": "123456",
             "port": 3306,
             "table": [
-                "t_xs_sale_credit_bill"
+                "t_xs_sale_contract"
             ],
-            "username": "zhd"
+            "username": "root"
         }
      */
     @PostMapping("/generator/build")

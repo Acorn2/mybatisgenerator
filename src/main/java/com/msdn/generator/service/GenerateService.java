@@ -238,5 +238,4 @@ public class GenerateService {
         String path = "java" + File.separator + "vo" + File.separator + dataModel.get("pascalName") + "VO.java";
         freemarkerService.write("vo", dataModel, path, generateParameter);
     }
-
 }

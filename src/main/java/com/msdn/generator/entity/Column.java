@@ -41,11 +41,11 @@ public class Column {
      */
     private Boolean isNumber;
     /**
-     * 数据库字段驼峰命名
+     * 数据库字段驼峰命名，saleBooke
      **/
     private String camelName;
     /**
-     * 数据库字段Pascal命名
+     * 数据库字段Pascal命名，SaleBook
      **/
     private String pascalName;
     /**
@@ -58,5 +58,4 @@ public class Column {
     private String key;
 
     private Boolean isConfig;
-
 }

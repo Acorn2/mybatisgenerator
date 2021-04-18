@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08f4a700-2422-428f-a222-4ac45bcfd30d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/GeneratorApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/annotation/CreatedName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/annotation/LastModifiedName.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/config/MybatisAutoConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/config/MybatisPlusAutoConfiguration$FillFieldConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/config/MybatisPlusAutoConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/CoreBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/PageSortInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/SimplePageInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/mybatis/AutoFillFieldInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/mybatis/ListMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/mybatis/ListProvider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/controller/GeneratorController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/entity/Column.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/entity/Config.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/entity/GenerateParameter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/service/FreemarkerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/service/GenerateService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/BeanUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/IdUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/PageUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/StringUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/controller.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/dto-page.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/dto.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/excel-export-vo.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/mapper-xml.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/mapper.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/model.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/service-impl.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/service.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/struct.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/vo.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/controller.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/dto-page.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/dto.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/mapper-xml.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/mapper.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/model.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/service-impl.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/service.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/struct.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/vo.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/mybatis-generator-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/mybatis-generator-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.msdn.CodeTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.msdn.CodeTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/msdn/CodeTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/文件结构图.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="20" selection-start-line="20" selection-end-line="59" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/GenerateParameter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" selection-start-line="4" selection-end-line="9" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/msdn/CodeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>camelName</find>
+      <find>jdbc.Driver</find>
+      <find>isConfig</find>
+      <find>tableName</find>
+      <find>ExampleBuilder</find>
+      <find>QueryDTO</find>
+      <find>PageUtils</find>
+      <find>ResultDTO</find>
+      <find>zhifeng</find>
+      <find>Interceptor</find>
+      <find>microservice</find>
+      <find>templates</find>
+      <find>setTemplateLoader</find>
+      <find>this.cache</find>
+      <find>LegacyDefaultFileTemplateLoader</find>
+      <find>freemarker</find>
+      <find>BeanUtils</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Result</replace>
+      <replace>msdn.generator</replace>
+      <replace>java</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Config.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/msdn/CodeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/BeanUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/service-impl.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/error/Errors.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/StringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/dto-page.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/controller.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/excel-export-vo.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/service.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/dto.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/annotation/CreatedName.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/IdUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/mybatis/ListProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/mybatis/AutoFillFieldInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/model.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatis/model.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/entity.java.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/mapper.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/PageSortInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/PageUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/dto-page.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/service-impl.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/controller.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/service.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/GenerateParameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/CoreBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/config/MybatisPlusAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/common/config/MybatisAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Java_About\Java_component\apache-maven-3.5.0\sts-maven" />
+        <option name="mavenHome" value="D:/Java_About/Java_component/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="D:\Java_About\Java_component\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mybatis-generator" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mybatis-generator" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="920" />
+    <option name="y" value="-8" />
+    <option name="width" value="945" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mybatisgenerator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis-generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workspace\code_generate\mybatis-generator\src\main\resources\templates\mybatis" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.msdn.generator.common.config" />
+      <recent name="com.msdn.generator.utils" />
+      <recent name="com.msdn.generator.common.dto" />
+      <recent name="com.msdn.generator.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\code_generate\mybatis-generator" />
+      <recent name="F:\workspace\code_generate\mybatis-generator\src\main\resources\templates\mybatisPlus" />
+      <recent name="F:\workspace\code_generate\mybatis-generator\src\main\java\com\msdn\generator\common" />
+      <recent name="F:\workspace\code_generate\mybatis-generator\src\main\java\com\msdn\generator" />
+      <recent name="F:\workspace\code_generate\mybatis-generator\src\main\java\com\msdn\generator\utils" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GeneratorApplication">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.msdn.generator.utils.Test" />
+      <module name="mybatis-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.msdn.generator.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.msdn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.msdn" />
+      <option name="MAIN_CLASS_NAME" value="com.msdn.CodeTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mybatis-generator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msdn.generator.GeneratorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.CodeTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TestHistory">
+    <history-entry file="CodeTest_test - 2021.04.17 at 11h 26m 25s.xml">
+      <configuration name="CodeTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CodeTest_test - 2021.04.17 at 11h 38m 31s.xml">
+      <configuration name="CodeTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CodeTest_test - 2021.04.17 at 11h 38m 42s.xml">
+      <configuration name="CodeTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CodeTest_test - 2021.04.17 at 16h 20m 48s.xml">
+      <configuration name="CodeTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CodeTest_test - 2021.04.17 at 16h 21m 06s.xml">
+      <configuration name="CodeTest.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4948097" visible="true" weight="0.14065085" />
+      <window_info id="Structure" order="1" sideWeight="0.5051903" side_tool="true" weight="0.25813568" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32952183" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32917964" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Sequence" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="SonarLint" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.32917964" />
+      <window_info anchor="bottom" id="MyBatis Log" order="17" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32984003" />
+      <window_info anchor="right" id="PlantUML" order="4" weight="0.32984003" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Bean Validation" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mybatis和Mybatis Plus代码生成器" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mybatis和Mybatis Plus代码生成器" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatis/controller.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatis/dto.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/annotation/LastModifiedName.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/annotation/Org.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/annotation/Department.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/annotation/Platform.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/IdUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/annotation/CreatedName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/mybatis/ListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/mybatis/ListProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.6/mybatis-3.5.6.jar!/org/apache/ibatis/plugin/Interceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.30/freemarker-2.3.30.jar!/freemarker/cache/FileTemplateLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="53" column="56" lean-forward="true" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.30/freemarker-2.3.30.jar!/freemarker/cache/TemplateCache.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+          <folding>
+            <element signature="e#4420#4421#0" expanded="true" />
+            <element signature="e#4462#4463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java_About/Java_component/jdk1.8.0_144/jre/lib/rt.jar!/java/util/Map.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.30/freemarker-2.3.30.jar!/freemarker/cache/TemplateLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.30/freemarker-2.3.30.jar!/freemarker/template/Configuration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="295" column="20" selection-start-line="295" selection-start-column="20" selection-end-line="295" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/controller2.java.ftl" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/mapper2.xml.ftl" />
+    <entry file="jar://$MAVEN_REPOSITORY$/cn/hutool/hutool-all/5.5.8/hutool-all-5.5.8.jar!/cn/hutool/core/convert/Convert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1367#1368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.3.2/mybatis-plus-core-3.3.2.jar!/com/baomidou/mybatisplus/core/metadata/OrderItem.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/model.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatis/model.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="12" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/dto-page.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatis/dto-page.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/controller.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/service-impl.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/PageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/PageSortInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="36" selection-start-line="36" selection-end-line="44" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/service.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatisPlus/mapper.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/utils/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java_About/Java_component/jdk1.8.0_144/jre/lib/rt.jar!/java/util/Date.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/mybatis/AutoFillFieldInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java_About/Java_component/jdk1.8.0_144/jre/lib/rt.jar!/java/time/LocalDateTime.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/config/MybatisAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/config/MybatisPlusAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/CoreBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mybatis/service-impl.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/SimplePageInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/msdn/CodeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" selection-start-line="4" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="20" selection-start-line="20" selection-end-line="59" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/GenerateParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>mybatis-generator</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

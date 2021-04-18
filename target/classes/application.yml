@@ -1,0 +1,9 @@
+server:
+  port: 8525
+
+spring:
+  datasource:
+    username: root
+    password: xxxx
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&useSSL=true&serverTimezone=UTC&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver

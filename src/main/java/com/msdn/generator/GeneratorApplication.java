@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GeneratorApplication {
 
     /**
-     * 测试的时候添加参数 -h 47.103.92.197 -P 3306 -d db_fl_foundation -u zhd -p ZhdJk2020@pwd -m foundation -g base -t t_jc_warehouse,t_jc_prod_area
+     * 测试的时候添加参数 -h 127.0.0.1 -P 3306 -d db_tl_sale -u root -p 123456 -m sale -g base -t t_xs_sale_contract,t_xs_sale_contract_detail
      *
      * @param args
      * @throws Exception
