@@ -1,71 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08f4a700-2422-428f-a222-4ac45bcfd30d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/GeneratorApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/annotation/CreatedName.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/annotation/LastModifiedName.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/config/MybatisAutoConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/config/MybatisPlusAutoConfiguration$FillFieldConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/config/MybatisPlusAutoConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/CoreBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/PageSortInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/Result.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/dto/SimplePageInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/mybatis/AutoFillFieldInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/mybatis/ListMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/common/mybatis/ListProvider.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/controller/GeneratorController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/entity/Column.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/entity/Config.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/entity/GenerateParameter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/service/FreemarkerService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/service/GenerateService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/BeanUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/IdUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/PageUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/StringUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/msdn/generator/utils/Test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/controller.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/dto-page.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/dto.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/excel-export-vo.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/mapper-xml.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/mapper.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/model.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/service-impl.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/service.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/struct.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatis/vo.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/controller.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/dto-page.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/dto.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/mapper-xml.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/mapper.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/model.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/service-impl.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/service.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/struct.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mybatisPlus/vo.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mybatis-generator-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mybatis-generator-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.msdn.CodeTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.msdn.CodeTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/msdn/CodeTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/文件结构图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/GeneratorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/controller/GeneratorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/FreemarkerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/msdn/generator/service/GenerateService.java" afterDir="false" />
-    </list>
+    <list default="true" id="08f4a700-2422-428f-a222-4ac45bcfd30d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="432">
+              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -465,7 +401,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mybatis和Mybatis Plus代码生成器" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mybatis和Mybatis Plus代码生成器" />
+    <MESSAGE value="代码完善，上传图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码完善，上传图片" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/common/dto/Result.java">
@@ -842,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/msdn/generator/entity/Column.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="432">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
         </state>
       </provider>
     </entry>
