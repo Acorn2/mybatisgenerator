@@ -13,7 +13,7 @@ public class Column {
     private Boolean isPrimaryKey;
 
     /**
-     * 主键类型，默认为ASSIGN_ID(3)
+     * Mybatis plus生成类主键类型，默认为ASSIGN_ID(3)
      */
     private String primaryKeyType = "ASSIGN_ID";
     /**

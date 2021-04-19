@@ -11,7 +11,6 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +43,7 @@ public class MybatisPlusAutoConfiguration {
         public FillFieldConfiguration() {
         }
 
+        @Override
         public void insertFill(MetaObject metaObject) {
             DateTime now = DateUtil.date();
             metaObject.setValue("createBy", "1");
@@ -56,6 +56,7 @@ public class MybatisPlusAutoConfiguration {
             this.strictInsertFill(metaObject, "platformId", String.class, "xxx");
         }
 
+        @Override
         public void updateFill(MetaObject metaObject) {
             DateTime now = DateUtil.date();
             metaObject.setValue("updateBy", "1");
