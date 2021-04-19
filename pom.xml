@@ -18,7 +18,6 @@
     <properties>
         <java.version>1.8</java.version>
         <logback.version>1.2.3</logback.version>
-        <slf4j.version>1.7.30</slf4j.version>
         <fastjson.version>1.2.73</fastjson.version>
         <hutool.version>5.5.8</hutool.version>
         <mysql.version>8.0.19</mysql.version>
@@ -36,17 +35,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
