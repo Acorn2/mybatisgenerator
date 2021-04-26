@@ -26,7 +26,7 @@ ${tableComment}
 @ApiModel(value="${tableName}对象", description="${tableComment}")
 public class ${pascalName} extends CoreBase{
 
-private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
 <#-- ----------  BEGIN 字段循环遍历  ---------->
 <#list columns as column>

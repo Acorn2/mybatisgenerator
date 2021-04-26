@@ -39,7 +39,7 @@ public class CoreBase implements Serializable {
     @TableField(value = "create_name", fill = FieldFill.INSERT)
     private String createName;
 
-    @ApiModelProperty(value = "注册时间")
+    @ApiModelProperty(value = "创建时间")
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     @DateTimeFormat(
             pattern = "yyyy-MM-dd HH:mm:ss"
@@ -49,11 +49,11 @@ public class CoreBase implements Serializable {
     )
     private Date createTime;
 
-    @ApiModelProperty(value = "修改人名称")
+    @ApiModelProperty(value = "修改人代码")
     @TableField(value = "update_by", fill = FieldFill.INSERT_UPDATE)
     private String updateBy;
 
-    @ApiModelProperty(value = "修改人")
+    @ApiModelProperty(value = "修改人名称")
     @TableField(value = "update_name", fill = FieldFill.INSERT_UPDATE)
     private String updateName;
 

@@ -26,6 +26,8 @@ public class GenerateService {
     @Autowired
     private FreemarkerService freemarkerService;
 
+    private String[] commonColumns;
+
     /**
      * @param tableName 数据库表名
      * @param parameter 模块名
@@ -45,6 +47,11 @@ public class GenerateService {
         int index = tableName.indexOf("_", 2);
         // 驼峰命名，首字母小写,比如：contractDetail
         String camelName = StringUtils.underscoreToCamel(tableName.substring(index + 1));
+
+        // 排除指定字段
+        if (Objects.equals("mybatisPlus", parameter.getType())) {
+            this.commonColumns = Config.mybatisPlusCommonColumns;
+        }
 
         Map<String, Object> dataModel = new HashMap<>();
         //获取表中字段的具体信息，包括字段名，字段类型，备注等
@@ -93,10 +100,6 @@ public class GenerateService {
         return DriverManager.getConnection(getUrl(generateParameter), generateParameter.getUsername(), generateParameter.getPassword());
     }
 
-    private String[] commonColumns = new String[]{
-            "del_flag", "version"
-    };
-
     /**
      * 根据表具体位置，获取表中字段的具体信息，包括字段名，字段类型，备注等
      *
@@ -112,11 +115,16 @@ public class GenerateService {
         ResultSet resultSet = connection.createStatement().executeQuery("SHOW FULL COLUMNS FROM " + tableName);
         List<Column> columnList = new ArrayList<>();
         while (resultSet.next()) {
+            String fieldName = resultSet.getString("Field");
+            // 特定字段从核心类里获取
+            if (Arrays.asList(this.commonColumns).contains(fieldName)) {
+                continue;
+            }
             Column column = new Column();
             // 判断是否是主键
             column.setIsPrimaryKey("PRI".equals(resultSet.getString("Key")));
             // 获取字段名称
-            column.setFieldName(resultSet.getString("Field"));
+            column.setFieldName(fieldName);
             // 如果是主键，或者其他几个通用字段
             if (column.getIsPrimaryKey() || Arrays.stream(commonColumns).anyMatch(m -> m.equals(column.getFieldName()))) {
                 column.setIsConfig(false);
