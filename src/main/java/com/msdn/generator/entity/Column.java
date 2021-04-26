@@ -56,6 +56,4 @@ public class Column {
     private String field;
 
     private String key;
-
-    private Boolean isConfig;
 }

@@ -18,7 +18,8 @@ import java.util.Date;
 /**
  * @author hresh
  * @date 2021/4/18 11:45
- * @description
+ * @description 表中的公共字段根据设计来更改，这里将公共字段封装到一个基础实体类中
+ * 
  */
 @Data
 @ApiModel("核心基础实体类")

@@ -116,7 +116,7 @@ public class GenerateService {
         List<Column> columnList = new ArrayList<>();
         while (resultSet.next()) {
             String fieldName = resultSet.getString("Field");
-            // 特定字段从核心类里获取
+            // Mybatis Plus特定字段从核心类里获取
             if (Arrays.asList(this.commonColumns).contains(fieldName)) {
                 continue;
             }
@@ -125,12 +125,6 @@ public class GenerateService {
             column.setIsPrimaryKey("PRI".equals(resultSet.getString("Key")));
             // 获取字段名称
             column.setFieldName(fieldName);
-            // 如果是主键，或者其他几个通用字段
-            if (column.getIsPrimaryKey() || Arrays.stream(commonColumns).anyMatch(m -> m.equals(column.getFieldName()))) {
-                column.setIsConfig(false);
-            } else {
-                column.setIsConfig(true);
-            }
             // 获取字段类型
             column.setFieldType(resultSet.getString("Type").replaceAll("\\(.*\\)", ""));
             switch (column.getFieldType()) {
