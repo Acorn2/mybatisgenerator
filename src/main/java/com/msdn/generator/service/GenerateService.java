@@ -49,9 +49,7 @@ public class GenerateService {
         String camelName = StringUtils.underscoreToCamel(tableName.substring(index + 1));
 
         // 排除指定字段
-        if (Objects.equals("mybatisPlus", parameter.getType())) {
-            this.commonColumns = Config.mybatisPlusCommonColumns;
-        }
+        this.commonColumns = Config.COMMON_COLUMNS;
 
         Map<String, Object> dataModel = new HashMap<>();
         //获取表中字段的具体信息，包括字段名，字段类型，备注等
@@ -116,15 +114,18 @@ public class GenerateService {
         List<Column> columnList = new ArrayList<>();
         while (resultSet.next()) {
             String fieldName = resultSet.getString("Field");
-            // Mybatis Plus特定字段从核心类里获取
-            if (Arrays.asList(this.commonColumns).contains(fieldName)) {
-                continue;
-            }
             Column column = new Column();
             // 判断是否是主键
             column.setIsPrimaryKey("PRI".equals(resultSet.getString("Key")));
             // 获取字段名称
             column.setFieldName(fieldName);
+
+            // Mybatis Plus特定字段从核心类里获取
+            if (Objects.nonNull(this.commonColumns) && Arrays.asList(this.commonColumns).contains(fieldName)) {
+                column.setIsCommonField(true);
+            } else {
+                column.setIsCommonField(false);
+            }
             // 获取字段类型
             column.setFieldType(resultSet.getString("Type").replaceAll("\\(.*\\)", ""));
             switch (column.getFieldType()) {

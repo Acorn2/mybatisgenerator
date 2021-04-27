@@ -3,6 +3,7 @@ package com.msdn.generator.common.dto;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -12,7 +13,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -33,39 +33,43 @@ public class CoreBase implements Serializable {
     private Integer isDeleted;
 
     @ApiModelProperty(value = "创建人")
-    @TableField(value = "create_by", fill = FieldFill.INSERT)
-    private String createBy;
+    @TableField(value = "create_user_code", fill = FieldFill.INSERT)
+    private String createUserCode;
 
     @ApiModelProperty(value = "创建人名称")
-    @TableField(value = "create_name", fill = FieldFill.INSERT)
-    private String createName;
+    @TableField(value = "create_user_name", fill = FieldFill.INSERT)
+    private String createUserName;
 
     @ApiModelProperty(value = "创建时间")
-    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    @TableField(value = "create_date", fill = FieldFill.INSERT)
     @DateTimeFormat(
             pattern = "yyyy-MM-dd HH:mm:ss"
     )
     @JsonFormat(
             pattern = "yyyy-MM-dd HH:mm:ss"
     )
-    private Date createTime;
+    private Date createDate;
 
     @ApiModelProperty(value = "修改人代码")
-    @TableField(value = "update_by", fill = FieldFill.INSERT_UPDATE)
-    private String updateBy;
+    @TableField(value = "update_user_code", fill = FieldFill.INSERT_UPDATE)
+    private String updateUserCode;
 
     @ApiModelProperty(value = "修改人名称")
-    @TableField(value = "update_name", fill = FieldFill.INSERT_UPDATE)
-    private String updateName;
+    @TableField(value = "update_user_name", fill = FieldFill.INSERT_UPDATE)
+    private String updateUserName;
 
     @ApiModelProperty(value = "修改时间")
-    @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
+    @TableField(value = "update_date", fill = FieldFill.INSERT_UPDATE)
     @DateTimeFormat(
             pattern = "yyyy-MM-dd HH:mm:ss"
     )
     @JsonFormat(
             pattern = "yyyy-MM-dd HH:mm:ss"
     )
-    private Date updateTime;
+    private Date updateDate;
 
+    @ApiModelProperty(value = "版本号")
+    @Version
+    @TableField(value = "version")
+    private String version;
 }

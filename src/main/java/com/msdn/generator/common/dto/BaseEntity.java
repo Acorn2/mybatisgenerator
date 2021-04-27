@@ -1,12 +1,20 @@
 package com.msdn.generator.common.dto;
 
-import com.baomidou.mybatisplus.annotation.TableField;
+import com.msdn.generator.common.annotation.CreatedName;
+import com.msdn.generator.common.annotation.LastModifiedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import tk.mybatis.mapper.annotation.LogicDelete;
+import tk.mybatis.mapper.annotation.Version;
 
+import javax.persistence.Column;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,31 +29,45 @@ import java.util.Date;
 @AllArgsConstructor
 public class BaseEntity implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @ApiModelProperty(value = "删除标记")
-    @TableField("del_flag")
+    @LogicDelete
+    @Column(name = "del_flag")
     private Boolean delFlag;
 
     @ApiModelProperty(value = "创建人代码")
-    @TableField("create_user_code")
+    @CreatedBy
+    @Column(name = "create_user_code")
     private String createUserCode;
 
     @ApiModelProperty(value = "创建人姓名")
-    @TableField("create_user_name")
+    @CreatedName
+    @Column(name = "create_user_name")
     private String createUserName;
 
     @ApiModelProperty(value = "创建时间")
-    @TableField("create_date")
+    @CreatedDate
+    @Column(name = "create_date")
     private Date createDate;
 
     @ApiModelProperty(value = "修改人代码")
-    @TableField("update_user_code")
+    @LastModifiedBy
+    @Column(name = "update_user_code")
     private String updateUserCode;
 
     @ApiModelProperty(value = "修改人姓名")
-    @TableField("update_user_name")
+    @LastModifiedName
+    @Column(name = "update_user_name")
     private String updateUserName;
 
     @ApiModelProperty(value = "修改时间")
-    @TableField("update_date")
+    @LastModifiedDate
+    @Column(name = "update_date")
     private Date updateDate;
+
+    @ApiModelProperty(value = "版本号")
+    @Version
+    @Column(name = "version")
+    private Integer version;
 }

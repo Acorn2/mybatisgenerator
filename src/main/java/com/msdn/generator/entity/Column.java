@@ -56,4 +56,9 @@ public class Column {
     private String field;
 
     private String key;
+
+    /**
+     * 是否是公共字段
+     */
+    private Boolean isCommonField;
 }

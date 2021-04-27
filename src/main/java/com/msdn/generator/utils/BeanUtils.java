@@ -6,17 +6,16 @@ import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.BeansException;
 
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
  * @author hresh
  * @date 2021/4/17 17:18
- * @description Bean相关工具类
+ * @description Bean相关工具类，在Spring项目中使用，则继承org.springframework.beans.BeanUtils
  */
-public class BeanUtils extends BeanUtil {
-
-    public BeanUtils() {
-    }
+public class BeanUtils extends org.springframework.beans.BeanUtils {
 
     public static void copyPropertiesIgnoreNull(Object source, Object target) throws BeansException {
         copyProperties(source, target, getNullPropertyNames(source));
@@ -71,6 +70,34 @@ public class BeanUtils extends BeanUtil {
     }
 
     public static <T> T mapToBean(Map<String, Object> map, Class<T> clazz) {
-        return BeanUtil.mapToBean(map, clazz,false,null);
+        return BeanUtil.mapToBean(map, clazz, false, null);
+    }
+
+    /**
+     * null值设置默认值
+     *
+     * @param obj
+     */
+    public static void setFeidValueNotNull(Object obj) {
+        for (Field field : obj.getClass().getDeclaredFields()) {
+            field.setAccessible(true);
+            try {
+                if (field.get(obj) == null) {
+                    if (field.getGenericType().toString().equals("class java.lang.String")) {
+                        field.set(obj, "");
+                    } else if (field.getGenericType().toString().equals("class java.lang.Integer")) {
+                        field.set(obj, 0);
+                    } else if (field.getGenericType().toString().equals("class java.lang.Double")) {
+                        field.set(obj, 0.0);
+                    } else if (field.getGenericType().toString().equals("class java.lang.Long")) {
+                        field.set(obj, 0L);
+                    } else if (field.getGenericType().toString().equals("class java.math.BigDecimal")) {
+                        field.set(obj, BigDecimal.ZERO);
+                    }
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

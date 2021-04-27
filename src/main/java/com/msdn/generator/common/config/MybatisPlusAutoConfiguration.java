@@ -46,22 +46,23 @@ public class MybatisPlusAutoConfiguration {
         @Override
         public void insertFill(MetaObject metaObject) {
             DateTime now = DateUtil.date();
-            metaObject.setValue("createBy", "1");
-            metaObject.setValue("createName", "admin");
-            metaObject.setValue("createTime", now);
-            metaObject.setValue("updateBy", "1");
-            metaObject.setValue("updateName", "admin");
-            metaObject.setValue("updateTime", now);
-            this.strictInsertFill(metaObject, "orgId", String.class, "xxx");
-            this.strictInsertFill(metaObject, "platformId", String.class, "xxx");
+            metaObject.setValue("createUserCode", "1");
+            metaObject.setValue("createUserName", "admin");
+            metaObject.setValue("createDate", now);
+            metaObject.setValue("updateUserCode", "1");
+            metaObject.setValue("updateUserName", "admin");
+            metaObject.setValue("updateDate", now);
+            // 其它公共字段
+//            this.strictInsertFill(metaObject, "orgId", String.class, "xxx");
+//            this.strictInsertFill(metaObject, "platformId", String.class, "xxx");
         }
 
         @Override
         public void updateFill(MetaObject metaObject) {
             DateTime now = DateUtil.date();
-            metaObject.setValue("updateBy", "1");
-            metaObject.setValue("updateName", "admin");
-            metaObject.setValue("updateTime", now);
+            metaObject.setValue("updateUserCode", "1");
+            metaObject.setValue("updateUserName", "admin");
+            metaObject.setValue("updateDate", now);
         }
     }
 }
