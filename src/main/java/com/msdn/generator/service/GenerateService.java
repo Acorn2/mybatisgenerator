@@ -90,7 +90,7 @@ public class GenerateService {
     }
 
     private String getUrl(GenerateParameter generateParameter) {
-        return "jdbc:mysql://" + generateParameter.getHost() + ":" + generateParameter.getPort() + "/" + generateParameter.getDatabase() + "?useSSL=false&characterEncoding=UTF-8";
+        return "jdbc:mysql://" + generateParameter.getHost() + ":" + generateParameter.getPort() + "/" + generateParameter.getDatabase() + "?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8";
     }
 
     // 数据库连接，类似于：DriverManager.getConnection("jdbc:mysql://localhost:3306/test_demo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC","root","password");
@@ -158,6 +158,10 @@ public class GenerateService {
                 case "decimal":
                     column.setJavaType("BigDecimal");
                     column.setIsNumber(true);
+                    break;
+                case "varbinary":
+                    column.setJavaType("byte[]");
+                    column.setIsNumber(false);
                     break;
                 default:
                     throw new Exception(tableName + " " + column.getFieldName() + " " + column.getFieldType() + "类型没有解析");
