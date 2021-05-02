@@ -61,4 +61,8 @@ public class GenerateParameter {
     @ApiModelProperty("查看帮助")
     @Parameter(names = "--help", help = true, description = "查看帮助")
     private boolean help;
+
+    @ApiModelProperty("表名截取起始索引，比如表名叫做t_sale_contract_detail，生成的实体类为ContractDetail，则该字段为7")
+    @Parameter(names = {"--tableStartIndex", "-tsi"}, description = "表名截取起始索引")
+    private String tableStartIndex;
 }

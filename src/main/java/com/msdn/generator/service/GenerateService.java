@@ -5,6 +5,7 @@ import com.msdn.generator.entity.Column;
 import com.msdn.generator.entity.Config;
 import com.msdn.generator.entity.GenerateParameter;
 import com.msdn.generator.utils.StringUtils;
+import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,11 @@ public class GenerateService {
         }
 
         // 根据项目设计的表名获取到表名，比如表名叫做：t_sale_contract_detail
-        int index = tableName.indexOf("_", 2);
+        // 现在表名截取起始索引该由参数配置
+//        int index = tableName.indexOf("_", 2);
+        Integer index = new Integer(parameter.getTableStartIndex());
         // 驼峰命名，首字母小写,比如：contractDetail
-        String camelName = StringUtils.underscoreToCamel(tableName.substring(index + 1));
+        String camelName = StringUtils.underscoreToCamel(tableName.substring(index));
 
         // 排除指定字段
         this.commonColumns = Config.COMMON_COLUMNS;
