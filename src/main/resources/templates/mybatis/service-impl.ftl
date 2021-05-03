@@ -32,22 +32,26 @@ public class ${pascalName}ServiceImpl implements ${pascalName}Service {
     @Override
     public List<${pascalName}VO> queryList(${pascalName}QueryPageDTO dto) {
         ${pascalName} ${camelName} = BeanUtils.copyProperties(dto, ${pascalName}.class);
-        return ${pascalName}Struct.INSTANCE.modelToVO(${camelName}Mapper.select(${camelName}), ${pascalName}VO.class);
+        return BeanUtils.copyProperties(${camelName}Mapper.select(${camelName}), ${pascalName}VO.class);
+<#--        return ${pascalName}Struct.INSTANCE.modelToVO(${camelName}Mapper.select(${camelName}), ${pascalName}VO.class);-->
     }
 
     @Override
     public ${pascalName}VO get(String id) {
-        return ${pascalName}Struct.INSTANCE.modelToVO(${camelName}Mapper.selectByPrimaryKey(id), ${pascalName}VO.class);
+        return BeanUtils.copyProperties(${camelName}Mapper.selectByPrimaryKey(id), ${pascalName}VO.class);
+<#--        return ${pascalName}Struct.INSTANCE.modelToVO(${camelName}Mapper.selectByPrimaryKey(id), ${pascalName}VO.class);-->
     }
 
     @Override
     public void add(${pascalName}DTO dto) {
-        ${camelName}Mapper.insert(${pascalName}Struct.INSTANCE.dtoToModel(dto));
+        ${camelName}Mapper.insert(BeanUtils.copyProperties(dto, ${pascalName}.class));
+<#--        ${camelName}Mapper.insert(${pascalName}Struct.INSTANCE.dtoToModel(dto));-->
     }
 
     @Override
     public void edit(${pascalName}DTO dto) {
-        ${camelName}Mapper.updateByPrimaryKeySelective(${pascalName}Struct.INSTANCE.dtoToModel(dto));
+        ${camelName}Mapper.updateByPrimaryKeySelective(BeanUtils.copyProperties(dto, ${pascalName}.class));
+<#--        ${camelName}Mapper.updateByPrimaryKeySelective(${pascalName}Struct.INSTANCE.dtoToModel(dto));-->
     }
 
     @Override

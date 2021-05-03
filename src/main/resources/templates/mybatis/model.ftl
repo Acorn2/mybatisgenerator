@@ -1,7 +1,7 @@
 package ${package}.model;
 
 import com.msdn.generator.utils.IdUtils;
-import com.msdn.generator.common.dto.BaseEntity;
+import com.msdn.generator.common.model.BaseEntity;
 import lombok.*;
 import tk.mybatis.mapper.annotation.KeySql;
 import io.swagger.annotations.ApiModel;

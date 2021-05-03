@@ -1,4 +1,4 @@
-package com.msdn.generator.common.dto;
+package com.msdn.generator.common.model;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

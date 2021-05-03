@@ -2,8 +2,8 @@ package ${package}.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.msdn.generator.common.dto.Result;
+import com.msdn.generator.common.dto.PageResult;
 import ${package}.dto.${pascalName}DTO;
-import ${package}.dto.${pascalName}QueryListDTO;
 import ${package}.dto.${pascalName}QueryPageDTO;
 import ${package}.service.${pascalName}Service;
 import ${package}.vo.${pascalName}VO;
@@ -24,43 +24,43 @@ public class ${pascalName}Controller {
 
     @PostMapping(value = "/queryPage")
     @ApiOperation("获取${tableComment}分页列表")
-    public Result<List<${pascalName}VO>> queryPage(@RequestBody ${pascalName}QueryPageDTO dto) {
+    public Result<PageResult<${pascalName}VO>> queryPage(@RequestBody ${pascalName}QueryPageDTO dto) {
         IPage<${pascalName}VO> ${camelName}VOPage = ${camelName}Service.queryPage(dto);
-        return ok(${camelName}VOPage);
+        return Result.ok(PageResult.ok(${camelName}VOPage));
     }
 
     @PostMapping(value = "/queryList")
     @ApiOperation("获取${tableComment}列表")
-    public Result<List<${pascalName}VO>> queryList(@RequestBody ${pascalName}QueryListDTO dto) {
+    public Result<List<${pascalName}VO>> queryList(@RequestBody ${pascalName}QueryPageDTO dto) {
         List<${pascalName}VO> ${camelName}VOList = ${camelName}Service.queryList(dto);
-        return ok(${camelName}VOList);
+        return Result.ok(${camelName}VOList);
     }
 
     @GetMapping(value = "/get")
     @ApiOperation("获取${tableComment}详情")
     public Result<${pascalName}VO> get(@RequestParam String id) {
         ${pascalName}VO ${camelName}VO = ${camelName}Service.get(id);
-        return ok(${camelName}VO);
+        return Result.ok(${camelName}VO);
     }
 
     @PostMapping(value = "/add")
     @ApiOperation("新增${tableComment}")
     public Result add(@RequestBody ${pascalName}DTO dto) {
         ${camelName}Service.add(dto);
-        return ok();
+        return Result.ok();
     }
 
     @PostMapping(value = "/edit")
     @ApiOperation("编辑${tableComment}")
     public Result edit(@RequestBody ${pascalName}DTO dto) {
         ${camelName}Service.edit(dto);
-        return ok();
+        return Result.ok();
     }
 
     @GetMapping(value = "/delete")
     @ApiOperation("删除${tableComment}")
     public Result delete(@RequestParam String id) {
         ${camelName}Service.delete(id);
-        return ok();
+        return Result.ok();
     }
 }

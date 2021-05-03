@@ -1,4 +1,4 @@
-package com.msdn.generator.common.dto;
+package com.msdn.generator.common.model;
 
 import com.msdn.generator.common.annotation.CreatedName;
 import com.msdn.generator.common.annotation.LastModifiedName;

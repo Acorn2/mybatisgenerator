@@ -9,9 +9,6 @@ import cn.hutool.core.util.StrUtil;
  */
 public class StringUtils extends StrUtil {
 
-    public StringUtils() {
-    }
-
     /**
      * 驼峰转下划线
      *

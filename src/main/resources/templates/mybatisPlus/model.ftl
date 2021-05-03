@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.msdn.generator.common.dto.CoreBase;
+import com.msdn.generator.common.model.CoreBase;
 
 import java.math.BigDecimal;
 

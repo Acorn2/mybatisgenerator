@@ -82,8 +82,8 @@ public class GenerateService {
         generateVO(dataModel, parameter);
         logger.info("**********开始生成DTO模板文件**********");
         generateDTO(dataModel, parameter);
-        logger.info("**********开始生成Struct模板文件**********");
-        generateStruct(dataModel, parameter);
+//        logger.info("**********开始生成Struct模板文件**********");
+//        generateStruct(dataModel, parameter);
         logger.info("**********开始生成Mapper模板文件**********");
         generateMapper(dataModel, parameter);
         logger.info("**********开始生成Service模板文件**********");
