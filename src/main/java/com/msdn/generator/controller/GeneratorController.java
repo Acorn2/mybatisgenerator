@@ -2,6 +2,7 @@ package com.msdn.generator.controller;
 
 import com.msdn.generator.entity.Config;
 import com.msdn.generator.entity.GenerateParameter;
+import com.msdn.generator.service.BaseService;
 import com.msdn.generator.service.GenerateService;
 import com.msdn.generator.service.XmlGenerateService;
 import org.slf4j.Logger;
@@ -52,6 +53,7 @@ public class GeneratorController {
         logger.info("**********欢迎使用基于FreeMarker的模板文件生成器**********");
         logger.info("************************************************************");
         String uuid = UUID.randomUUID().toString();
+        BaseService.setConnection(parameter);
         for (String table : parameter.getTable()) {
             generateService.generate(table, parameter, uuid);
         }
@@ -64,6 +66,7 @@ public class GeneratorController {
         ZipDirectory(path, response.getOutputStream());
         // 递归删除目录
         FileSystemUtils.deleteRecursively(new File(path));
+        BaseService.closeConnection();
         logger.info("************************************************************");
         logger.info("**********模板文件下载完毕，谢谢使用**********");
     }
@@ -73,6 +76,7 @@ public class GeneratorController {
         logger.info("**********欢迎使用基于FreeMarker的模板文件生成器**********");
         logger.info("************************************************************");
         String uuid = UUID.randomUUID().toString();
+        BaseService.setConnection(parameter);
         for (String table : parameter.getTable()) {
             xmlGenerateService.generate(table, parameter, uuid);
         }
@@ -85,6 +89,7 @@ public class GeneratorController {
         ZipDirectory(path, response.getOutputStream());
         // 递归删除目录
         FileSystemUtils.deleteRecursively(new File(path));
+        BaseService.closeConnection();
         logger.info("************************************************************");
         logger.info("**********模板文件下载完毕，谢谢使用**********");
     }

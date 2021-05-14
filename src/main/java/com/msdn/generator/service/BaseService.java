@@ -7,6 +7,7 @@ import com.msdn.generator.utils.StringUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,13 +20,22 @@ import java.util.Objects;
  */
 public class BaseService {
 
+    private static Connection connection;
 
-    public String getUrl(GenerateParameter generateParameter) {
+    public static void setConnection(GenerateParameter generateParameter) throws Exception {
+        connection = getConnection(generateParameter);
+    }
+
+    public static void closeConnection() throws SQLException {
+        connection.close();
+    }
+
+    public static String getUrl(GenerateParameter generateParameter) {
         return "jdbc:mysql://" + generateParameter.getHost() + ":" + generateParameter.getPort() + "/" + generateParameter.getDatabase() + "?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8";
     }
 
     // 数据库连接，类似于：DriverManager.getConnection("jdbc:mysql://localhost:3306/test_demo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC","root","password");
-    public Connection getConnection(GenerateParameter generateParameter) throws Exception {
+    public static Connection getConnection(GenerateParameter generateParameter) throws Exception {
         return DriverManager.getConnection(getUrl(generateParameter), generateParameter.getUsername(), generateParameter.getPassword());
     }
 
@@ -39,7 +49,7 @@ public class BaseService {
      */
     public List<Column> getColumns(String tableName, GenerateParameter parameter, String[] commonColumns) throws Exception {
         // 数据库连接
-        Connection connection = getConnection(parameter);
+//        Connection connection = getConnection(parameter);
         // 获取表定义的字段信息
         ResultSet resultSet = connection.createStatement().executeQuery("SHOW FULL COLUMNS FROM " + tableName);
         List<Column> columnList = new ArrayList<>();
