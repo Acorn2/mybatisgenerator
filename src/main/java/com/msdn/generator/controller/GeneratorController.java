@@ -3,6 +3,7 @@ package com.msdn.generator.controller;
 import com.msdn.generator.entity.Config;
 import com.msdn.generator.entity.GenerateParameter;
 import com.msdn.generator.service.GenerateService;
+import com.msdn.generator.service.XmlGenerateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,8 @@ public class GeneratorController {
     private static final Logger logger = LoggerFactory.getLogger(GeneratorController.class);
     @Autowired
     private GenerateService generateService;
+    @Autowired
+    private XmlGenerateService xmlGenerateService;
 
     /*
         // 请求参数
@@ -51,6 +54,27 @@ public class GeneratorController {
         String uuid = UUID.randomUUID().toString();
         for (String table : parameter.getTable()) {
             generateService.generate(table, parameter, uuid);
+        }
+        logger.info("**********模板文件生成完毕，准备下载**********");
+        String path = Config.OutputPath + File.separator + uuid;
+        //设置响应头控制浏览器的行为，这里我们下载zip
+        response.setHeader("Content-disposition", "attachment; filename=code.zip");
+        response.setHeader("Access-Control-Expose-Headers", "Content-disposition");
+        // 将response中的输出流中的文件压缩成zip形式
+        ZipDirectory(path, response.getOutputStream());
+        // 递归删除目录
+        FileSystemUtils.deleteRecursively(new File(path));
+        logger.info("************************************************************");
+        logger.info("**********模板文件下载完毕，谢谢使用**********");
+    }
+
+    @PostMapping("/generator/buildXml")
+    public void buildXml(@RequestBody GenerateParameter parameter, HttpServletResponse response) throws Exception {
+        logger.info("**********欢迎使用基于FreeMarker的模板文件生成器**********");
+        logger.info("************************************************************");
+        String uuid = UUID.randomUUID().toString();
+        for (String table : parameter.getTable()) {
+            xmlGenerateService.generate(table, parameter, uuid);
         }
         logger.info("**********模板文件生成完毕，准备下载**********");
         String path = Config.OutputPath + File.separator + uuid;
