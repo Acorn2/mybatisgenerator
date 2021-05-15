@@ -19,11 +19,11 @@ public interface ${pascalName}Service {
 	${pascalName}VO get(String id);
 
 	// 新增${tableComment}
-	void add(${pascalName}DTO dto);
+	Boolean add(${pascalName}DTO dto);
 
 	// 编辑${tableComment}
-	void edit(${pascalName}DTO dto);
+	Boolean edit(${pascalName}DTO dto);
 
 	// 删除${tableComment}
-	void delete(String id);
+	Boolean delete(String id);
 }

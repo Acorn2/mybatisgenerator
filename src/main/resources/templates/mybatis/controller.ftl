@@ -46,21 +46,30 @@ public class ${pascalName}Controller {
     @PostMapping(value = "/add")
     @ApiOperation("新增${tableComment}")
     public Result add(@RequestBody ${pascalName}DTO dto) {
-        ${camelName}Service.add(dto);
+        int count = ${camelName}Service.add(dto);
+        if (count < 1) {
+            return Result.failed();
+        }
         return Result.ok();
     }
 
     @PostMapping(value = "/edit")
     @ApiOperation("编辑${tableComment}")
     public Result edit(@RequestBody ${pascalName}DTO dto) {
-        ${camelName}Service.edit(dto);
+        int count = ${camelName}Service.edit(dto);
+        if (count < 1) {
+            return Result.failed();
+        }
         return Result.ok();
     }
 
     @GetMapping(value = "/delete")
     @ApiOperation("删除${tableComment}")
     public Result delete(@RequestParam String id) {
-        ${camelName}Service.delete(id);
+        int count = ${camelName}Service.delete(id);
+        if (count < 1) {
+            return Result.failed();
+        }
         return Result.ok();
     }
 }

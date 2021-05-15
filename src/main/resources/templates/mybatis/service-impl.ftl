@@ -43,19 +43,19 @@ public class ${pascalName}ServiceImpl implements ${pascalName}Service {
     }
 
     @Override
-    public void add(${pascalName}DTO dto) {
-        ${camelName}Mapper.insert(BeanUtils.copyProperties(dto, ${pascalName}.class));
+    public int add(${pascalName}DTO dto) {
+        return ${camelName}Mapper.insertSelective(BeanUtils.copyProperties(dto, ${pascalName}.class));
 <#--        ${camelName}Mapper.insert(${pascalName}Struct.INSTANCE.dtoToModel(dto));-->
     }
 
     @Override
-    public void edit(${pascalName}DTO dto) {
-        ${camelName}Mapper.updateByPrimaryKeySelective(BeanUtils.copyProperties(dto, ${pascalName}.class));
+    public int edit(${pascalName}DTO dto) {
+        return ${camelName}Mapper.updateByPrimaryKeySelective(BeanUtils.copyProperties(dto, ${pascalName}.class));
 <#--        ${camelName}Mapper.updateByPrimaryKeySelective(${pascalName}Struct.INSTANCE.dtoToModel(dto));-->
     }
 
     @Override
-    public void delete(String id) {
-        ${camelName}Mapper.deleteByPrimaryKey(id);
+    public int delete(String id) {
+        return ${camelName}Mapper.deleteByPrimaryKey(id);
     }
 }
